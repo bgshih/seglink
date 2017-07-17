@@ -1,2 +1,1 @@
-# seglink
-Detecting text by linking segments.
+Currently a placeholder. Code coming soon.
