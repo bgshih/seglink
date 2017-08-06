@@ -1,0 +1,21 @@
+{
+  "cuda_devices": "0,1",
+  "log_prefix": "pretrain_",
+  "pretrained_model": "../data/VGG_ILSVRC_16_layers_ssd.ckpt",
+  "train_datasets": "../data/synthtext_full.tf",
+  "image_height": 384,
+  "image_width": 384,
+  "resume_training": 0,
+  "train_batch_size": 32,
+  "n_data_threads": 8,
+  "max_steps": 90000,
+  "optimizer": "sgd",
+  "base_lr": 5e-4,
+  "lr_policy": "staircase",
+  "lr_breakpoints": [10000, 20000, 60000, 75000, 90000],
+  "lr_decay": [0.64, 0.8, 1.0, 0.1, 0.01],
+  "profiling": 0,
+  "brief_summary_period": 20,
+  "detailed_summary_period": 200,
+  "checkpoint_period": 1000
+}

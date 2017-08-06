@@ -1,0 +1,21 @@
+{
+  "cuda_devices": "2,3",
+  "log_prefix": "finetune_ic15_",
+  "resume": "finetune",
+  "finetune_model": "../exp/sgd/checkpoint",
+  "train_datasets": "../data/icdar_2015_incidental_train.tf",
+  "image_height": 512,
+  "image_width": 512,
+  "train_batch_size": 32,
+  "n_data_threads": 8,
+  "max_steps": 10000,
+  "optimizer": "sgd",
+  "base_lr": 1e-4,
+  "lr_policy": "staircase",
+  "lr_breakpoints": [2000, 4000, 6000],
+  "lr_decay": [1.0, 0.1, 0.01],
+  "profiling": 0,
+  "brief_summary_period": 20,
+  "detailed_summary_period": 200,
+  "checkpoint_period": 1000
+}
