@@ -365,6 +365,7 @@ class DatasetCreator_Icdar2013(DatasetCreator):
       # convert bounding box to polygon
       word_polygons.extend([xmin, ymin, xmax, ymin, xmax, ymax, xmin, ymax])
       word = m.group(5)
+      word = bytes(word, encoding='utf-8')
       words.append(word)
 
     # pack annotations into a python dict
@@ -406,7 +407,7 @@ class DatasetCreator_Td500(DatasetCreator):
 
   def _parse_annotation(self, gt_path):
     with open(gt_path, 'r') as f:
-      lines = [o.decode('utf-8-sig').encode('utf-8').strip() for o in f.readlines()]
+      lines = [o.strip() for o in f.readlines()]
 
     words = []
     word_polygons = []
@@ -432,7 +433,7 @@ class DatasetCreator_Td500(DatasetCreator):
       x4 = cx - 0.5 * w * math.cos(theta) - 0.5 * h * math.sin(theta)
       y4 = cy - 0.5 * w * math.sin(theta) + 0.5 * h * math.cos(theta)
       word_polygons.extend([x1, y1, x2, y2, x3, y3, x4, y4])
-      words.append('') # TD500 has no text annotations
+      words.append(b'') # TD500 has no text annotations
 
     annot_dict = {
       'words': words,
