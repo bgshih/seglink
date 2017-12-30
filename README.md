@@ -1,5 +1,3 @@
-(This repo is in its alpha state and is subject to changes. Currently, it is mean to unveal the implementation details of the paper. Pretrained model is under preparation and is coming soon.)
-
 # SegLink
 
 Detecting Oriented Text in Natural Images by Linking Segments (https://arxiv.org/abs/1703.06520).
